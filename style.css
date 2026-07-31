@@ -1,19 +1,18 @@
-/* Back To The Future Aesthetic Color Palette */
+/* Subtle 80s Synthwave Palette */
 :root {
-    --bg-dark: #0a0a12;               /* Retro Night Sky */
-    --card-bg: #141422;               /* Dark Dashboard Card */
-    --neon-orange: #ff5500;           /* Outatime Orange */
-    --neon-yellow: #ffcc00;           /* Time Circuit Yellow */
-    --flux-cyan: #00f0ff;             /* Flux Capacitor Lightning Blue */
-    --text-light: #f0f0f8;            /* Bright White-Blue */
-    --text-muted: #8a8aa3;           /* Muted Gray-Blue */
+    --bg-dark: #12131c;             /* Dark Navy/Slate Background */
+    --card-bg: #1a1c29;             /* Slightly Lighter Dark Card */
+    --neon-pink: #ff2a75;           /* Subtle 80s Magenta/Pink */
+    --neon-cyan: #00f0ff;           /* Electric Cyan Accent */
+    --text-bright: #f0f4f8;         /* Crisp White Text */
+    --text-muted: #94a3b8;          /* Muted Gray Text */
 }
 
-/* Global Body Styling */
+/* Global Styles */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
     background-color: var(--bg-dark);
-    color: var(--text-light);
+    color: var(--text-bright);
     margin: 0;
     padding: 0;
     display: flex;
@@ -21,100 +20,94 @@ body {
     min-height: 100vh;
 }
 
-/* BTTF Header Banner */
-.bttf-header {
-    background: linear-gradient(135deg, #1f0036 0%, #3a0007 50%, #ff5500 100%);
+/* Header Banner */
+.portfolio-header {
+    background: linear-gradient(135deg, #2b1055, var(--neon-pink));
     color: white;
     text-align: center;
-    padding: 3.5rem 1rem;
-    border-bottom: 4px solid var(--flux-cyan);
-    box-shadow: 0 4px 25px rgba(0, 240, 255, 0.3);
+    padding: 3rem 1rem;
+    border-bottom: 3px solid var(--neon-cyan);
+    box-shadow: 0 4px 15px rgba(0, 240, 255, 0.2);
 }
 
 .badge {
-    background-color: var(--neon-yellow);
-    color: #000;
-    padding: 6px 16px;
-    border-radius: 4px;
+    background-color: rgba(0, 0, 0, 0.4);
+    color: var(--neon-cyan);
+    padding: 6px 14px;
+    border-radius: 20px;
     font-size: 0.85rem;
-    font-weight: 800;
-    letter-spacing: 2px;
+    font-weight: 600;
+    border: 1px solid var(--neon-cyan);
 }
 
-#time-traveler-name {
-    font-size: 3rem;
-    margin: 1.2rem 0 0.5rem 0;
-    letter-spacing: 2px;
-    color: #ffffff;
-    text-shadow: 0 0 10px var(--neon-orange), 0 0 20px var(--neon-orange);
+#student-name {
+    font-size: 2.6rem;
+    margin: 1rem 0 0.5rem 0;
 }
 
 .tagline {
     font-size: 1.1rem;
-    color: var(--flux-cyan);
-    font-style: italic;
+    color: #e2e8f0;
     margin: 0;
 }
 
-/* Main Container Layout */
+/* Main Layout Grid */
 .container {
     max-width: 800px;
     width: 90%;
-    margin: 2.5rem auto;
+    margin: 2rem auto;
     display: flex;
     flex-direction: column;
-    gap: 1.8rem;
+    gap: 1.5rem;
     flex-grow: 1;
 }
 
-/* BTTF Style Cards */
+/* Cards */
 .card {
     background-color: var(--card-bg);
-    padding: 2rem;
+    padding: 1.8rem;
     border-radius: 12px;
-    border: 1px solid #2a2a44;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+    border: 1px solid #2d3248;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 .card h2 {
     margin-top: 0;
-    color: var(--neon-yellow);
-    border-bottom: 2px solid #2a2a44;
-    padding-bottom: 0.6rem;
-    letter-spacing: 1px;
+    color: var(--neon-cyan);
+    border-bottom: 2px solid #2d3248;
+    padding-bottom: 0.5rem;
 }
 
-/* Skill Badges */
+/* Skill Tags */
 .skills-grid {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.6rem;
+    gap: 0.5rem;
     margin-top: 1rem;
 }
 
 .skill-tag {
-    background-color: #1c1c30;
-    color: var(--flux-cyan);
+    background-color: #23273a;
+    color: var(--neon-pink);
     font-weight: 600;
-    padding: 8px 16px;
+    padding: 6px 14px;
     border-radius: 6px;
-    border: 1px solid var(--flux-cyan);
-    box-shadow: 0 0 8px rgba(0, 240, 255, 0.2);
+    border: 1px solid var(--neon-pink);
+    font-size: 0.9rem;
 }
 
 /* Project Cards */
 .project-card {
-    background-color: #0c0c16;
-    border: 1px solid #282840;
-    border-left: 4px solid var(--neon-orange);
-    padding: 1.2rem;
+    background-color: #12131c;
+    border: 1px solid #2d3248;
+    border-left: 4px solid var(--neon-pink);
+    padding: 1rem 1.2rem;
     border-radius: 8px;
     margin-top: 1rem;
 }
 
 .project-card h3 {
-    margin: 0 0 0.5rem 0;
-    color: var(--text-light);
+    margin: 0 0 0.4rem 0;
 }
 
 .project-card p {
@@ -122,46 +115,36 @@ body {
     color: var(--text-muted);
 }
 
-/* Interactive DeLorean Button */
+/* Interactive Button */
 button {
-    background-color: var(--neon-orange);
+    background-color: var(--neon-pink);
     color: white;
     border: none;
-    padding: 14px 28px;
-    font-size: 1.1rem;
-    font-weight: 800;
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: 600;
     border-radius: 6px;
     cursor: pointer;
-    letter-spacing: 1px;
-    transition: all 0.2s ease;
-    box-shadow: 0 0 15px rgba(255, 85, 0, 0.4);
+    transition: transform 0.1s ease, background-color 0.2s ease;
 }
 
 button:hover {
-    background-color: var(--neon-yellow);
-    color: #000;
-    transform: scale(1.05);
-    box-shadow: 0 0 25px rgba(255, 204, 0, 0.8);
+    background-color: #e01e63;
+    transform: translateY(-2px);
 }
 
-.time-box {
-    margin-top: 1.2rem;
-    font-size: 1.1rem;
-    font-weight: bold;
-    color: var(--flux-cyan);
-    background-color: #080810;
-    padding: 12px;
-    border-radius: 6px;
-    border: 1px solid var(--flux-cyan);
-    display: inline-block;
+.status-text {
+    margin-top: 1rem;
+    font-weight: 600;
+    color: var(--neon-cyan);
 }
 
 /* Footer */
 footer {
     text-align: center;
-    padding: 1.8rem;
-    background-color: #05050a;
+    padding: 1.5rem;
+    background-color: #0d0e14;
     color: var(--text-muted);
     font-size: 0.9rem;
-    border-top: 1px solid #1a1a2e;
+    border-top: 1px solid #1a1c29;
 }
