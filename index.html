@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Portfolio | 80s Edition</title>
+    <title>Cello's Projects | Portfolio & Arcade</title>
     <!-- Linking external CSS stylesheet -->
     <link rel="stylesheet" href="style.css">
 </head>
@@ -12,9 +12,9 @@
     <!-- Header / Hero Section -->
     <header class="portfolio-header">
         <div class="header-container">
-            <span class="badge">🚗 Cruisin' Since '85</span>
-            <h1 id="student-name">Hi, I'm [Your Name] 👋</h1>
-            <p class="tagline">Student developer, technology lover, and retro enthusiast.</p>
+            <span class="badge">🏎️ Developer & Creator</span>
+            <h1 id="student-name">Cello's Projects</h1>
+            <p class="tagline">Student developer focused on building cool software, tech hardware, and web apps.</p>
         </div>
     </header>
 
@@ -24,49 +24,90 @@
         <!-- About Me Section -->
         <section class="card">
             <h2>About Me</h2>
-            <p>Welcome to my portfolio! I'm a student passionate about web development, design, and building creative software. When I'm not coding, I love retro aesthetics, sci-fi movies, and classic cars.</p>
+            <p>Hi, I'm Marcello! Welcome to my project hub. I enjoy programming, experimenting with new technology, and building digital tools with a subtle retro vibe. Check out my categories below as I continuously build and add new creations!</p>
         </section>
 
         <!-- Tech Stack & Skills -->
         <section class="card">
-            <h2>Skills & Technologies</h2>
+            <h2>Skills & Tools</h2>
             <div class="skills-grid">
-                <span class="skill-tag">HTML5</span>
-                <span class="skill-tag">CSS3</span>
+                <span class="skill-tag">HTML5 & CSS3</span>
                 <span class="skill-tag">JavaScript</span>
                 <span class="skill-tag">Git / GitHub</span>
+                <span class="skill-tag">UI / Web Design</span>
                 <span class="skill-tag">Problem Solving</span>
             </div>
         </section>
 
-        <!-- Featured Projects Section -->
+        <!-- SECTION 1: Web & Software Development -->
         <section class="card">
-            <h2>Featured Projects</h2>
-            <div class="project-card">
-                <h3>🏎️ DeLorean Project Dashboard</h3>
-                <p>A responsive personal portfolio with subtle 80s neon styling and clean code architecture.</p>
-            </div>
-            <div class="project-card">
-                <h3>🎮 Retro Web Game</h3>
-                <p>An interactive browser game utilizing JavaScript event listeners and custom animations.</p>
+            <h2>💻 Web & Software Projects</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <h3>🏎️ Cello's Personal Portfolio</h3>
+                    <p>My flagship website featuring dark retro aesthetics, structured project cards, and embedded JavaScript applications.</p>
+                </div>
+                <div class="project-card placeholder-card">
+                    <h3>➕ Web Project #2 [Add Name Later]</h3>
+                    <p>Placeholder for your next web app, web app tool, or JavaScript utility.</p>
+                </div>
             </div>
         </section>
 
-        <!-- Interactive Feature Card -->
-        <section class="card interactive-card">
-            <h2>Interactive Garage</h2>
-            <p>Click below to inspect the dashboard!</p>
+        <!-- SECTION 2: Hardware & Electronics / Engineering -->
+        <section class="card">
+            <h2>⚡ Hardware & Electronics</h2>
+            <div class="project-grid">
+                <div class="project-card placeholder-card">
+                    <h3>🛠️ Hardware Project #1 [Add Name Later]</h3>
+                    <p>Space for Arduino, Raspberry Pi, PC builds, custom keyboards, or circuitry projects.</p>
+                </div>
+                <div class="project-card placeholder-card">
+                    <h3>🛠️ Hardware Project #2 [Add Name Later]</h3>
+                    <p>Space for future mechanical or electrical engineering builds.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: Design, Media & Games -->
+        <section class="card">
+            <h2>🎨 Design, Media & Arcade</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <h3>⚡ 88 MPH Speed Run Game</h3>
+                    <p>An interactive retro speed-charging mini-game built right into this portfolio below!</p>
+                </div>
+                <div class="project-card placeholder-card">
+                    <h3>🎨 Creative Project [Add Name Later]</h3>
+                    <p>Space for 3D models, digital artwork, video edits, or audio projects.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: Interactive Back To The Future Mini-Game -->
+        <section class="card game-card">
+            <h2>🕹️ Mini-Game: Hit 88 MPH!</h2>
+            <p>Charge the Flux Capacitor power supply and hit the gas! Click <strong>"ACCELERATE"</strong> as fast as you can to hit 88 MPH before time runs out!</p>
             
-            <!-- Interactive Action Button -->
-            <button id="retro-btn">Start the Engine 🚗</button>
-            <p id="retro-output" class="status-text"></p>
+            <div class="game-dashboard">
+                <div class="speedometer">
+                    <span id="speed-display">0</span> <small>MPH</small>
+                </div>
+                <div class="timer">
+                    TIME LEFT: <span id="time-display">10</span>s
+                </div>
+            </div>
+
+            <!-- Action Button & Output -->
+            <button id="gas-btn">ACCELERATE! 🏎️💨</button>
+            <p id="game-status" class="game-status-text">Click Accelerate to start the run!</p>
         </section>
 
     </main>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2026 [Your Name]. Hosted on GitHub Pages.</p>
+        <p>&copy; 2026 Marcello. Hosted on GitHub Pages.</p>
     </footer>
 
     <!-- Linking external JavaScript file -->
