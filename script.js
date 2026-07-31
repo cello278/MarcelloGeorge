@@ -3,7 +3,59 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Select all view sections and interaction buttons
     const views = document.querySelectorAll('.view-section');
-    const clickableCards = document.querySelectorAll('.clickable');
+    const clickabdocument.addEventListener("DOMContentLoaded", function () {
+    
+    // Select view elements
+    const views = document.querySelectorAll(".view-section");
+    const navHomeBtn = document.getElementById("nav-home-btn");
+    const navMoviesBtn = document.getElementById("nav-movies-btn");
+    const clickableCards = document.querySelectorAll(".clickable");
+    const backButtons = document.querySelectorAll(".back-btn");
+
+    // Helper function to switch active views
+    function switchView(targetViewId) {
+        views.forEach(function (view) {
+            view.classList.remove("active-view");
+        });
+
+        const targetView = document.getElementById(targetViewId);
+        if (targetView) {
+            targetView.classList.add("active-view");
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+    }
+
+    // Nav Bar Button Click Listeners
+    if (navHomeBtn) {
+        navHomeBtn.addEventListener("click", function () {
+            switchView("main-view");
+        });
+    }
+
+    if (navMoviesBtn) {
+        navMoviesBtn.addEventListener("click", function () {
+            switchView("movies-view");
+        });
+    }
+
+    // Project Card Click Listeners
+    clickableCards.forEach(function (card) {
+        card.addEventListener("click", function () {
+            const targetViewId = card.getAttribute("data-target");
+            if (targetViewId) {
+                switchView(targetViewId);
+            }
+        });
+    });
+
+    // Back Button Click Listeners
+    backButtons.forEach(function (button) {
+        button.addEventListener("click", function () {
+            switchView("main-view");
+        });
+    });
+
+});leCards = document.querySelectorAll('.clickable');
     const backButtons = document.querySelectorAll('.back-btn');
     const navHomeBtn = document.getElementById('nav-home-btn');
     const navMoviesBtn = document.getElementById('nav-movies-btn');
