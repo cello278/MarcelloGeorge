@@ -1,33 +1,253 @@
+Great choice! Back to the Future is a total classic—and it is one of the coolest themes you could ever pick for a web project!
+
+We can completely transform your portfolio into the ultimate Flux Capacitor / Time Travel Hub, packed with 80s synthwave neon accents, 1.21 Gigawatts of style, and a custom time circuit display.
+
+Your Back to the Future Portfolio Code
+Replace all the contents of your three files with the updated code below:
+
+index.html
+HTML
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Awesome Personal Website</title>
-    <!-- Linking our external CSS stylesheet for styling -->
+    <title>Back To The Future | Student Portfolio</title>
+    <!-- Link to external stylesheet -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Header Section: Holds the main heading and intro -->
-    <header>
-        <h1 id="main-title">Welcome to My Personal Website!</h1>
-        <p class="subtitle">Built with HTML, CSS, and JavaScript.</p>
+    <!-- Header styled like Hill Valley & Time Machine Title -->
+    <header class="bttf-header">
+        <div class="header-content">
+            <span class="badge">1.21 GIGAWATTS OF CODE</span>
+            <h1 id="time-traveler-name">MARTY [YOUR NAME]</h1>
+            <p class="tagline">"If you're gonna build a website, why not do it with some style?"</p>
+        </div>
     </header>
 
-    <!-- Main Content Section -->
-    <main>
-        <section class="card">
-            <h2>About Me</h2>
-            <p>Hi! I'm learning how to code and build websites from scratch. This site is hosted on GitHub Pages!</p>
-            
-            <!-- A button that will trigger an action in our JavaScript file -->
-            <button id="magic-btn">Click For A Surprise!</button>
-            <p id="magic-text" class="hidden-text"></p>
+    <!-- Main Content Container -->
+    <main class="container">
+
+        <!-- Time Circuits Section / About Me -->
+        <section class="card time-circuit-card">
+            <h2>⏱️ Destination: Future Developer</h2>
+            <p>Welcome to my time-traveling developer log! I am a student programmer learning how to build modern websites, fix code bugs in the past, and code for the future.</p>
         </section>
+
+        <!-- DeLorean Power Grid / Skills Section -->
+        <section class="card">
+            <h2>⚡ Flux Capacitor Tech Stack</h2>
+            <div class="skills-grid">
+                <span class="skill-tag">HTML5</span>
+                <span class="skill-tag">CSS3</span>
+                <span class="skill-tag">JavaScript</span>
+                <span class="skill-tag">Git / GitHub</span>
+                <span class="skill-tag">Time Management</span>
+            </div>
+        </section>
+
+        <!-- Time Travel Logs / Projects Section -->
+        <section class="card">
+            <h2>🚗 DeLorean Project Logs</h2>
+            <div class="project-card">
+                <h3>⚡ Log 1985: Personal Portfolio</h3>
+                <p>A high-speed responsive website powered by standard web technologies and dynamic JavaScript.</p>
+            </div>
+            <div class="project-card">
+                <h3>🎮 Log 2015: Interactive Arcade Game</h3>
+                <p>A retro-futuristic browser mini-game packed with interactive DOM controls.</p>
+            </div>
+        </section>
+
+        <!-- Dynamic Time Circuits / Interactive Section -->
+        <section class="card interactive-card">
+            <h2>📟 Time Circuit Display</h2>
+            <p>Press the button to hit 88 MPH and jump through time logs!</p>
+            
+            <!-- Interactive Action Button -->
+            <button id="delorean-btn">Hit 88 MPH!</button>
+            <p id="circuit-output" class="time-box">PRESENT TIME: OCT 26 1985 01:21 PM</p>
+        </section>
+
     </main>
 
-    <!-- Linking our JavaScript file at the end of body so HTML loads first -->
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Hill Valley Code Labs. Hosted on GitHub Pages.</p>
+    </footer>
+
+    <!-- Link to external JavaScript file -->
     <script src="script.js"></script>
 </body>
 </html>
+style.css
+CSS
+/* Back To The Future Aesthetic Color Palette */
+:root {
+    --bg-dark: #0a0a12;               /* Retro Night Sky */
+    --card-bg: #141422;               /* Dark Dashboard Card */
+    --neon-orange: #ff5500;           /* Outatime Orange */
+    --neon-yellow: #ffcc00;           /* Time Circuit Yellow */
+    --flux-cyan: #00f0ff;             /* Flux Capacitor Lightning Blue */
+    --text-light: #f0f0f8;            /* Bright White-Blue */
+    --text-muted: #8a8aa3;           /* Muted Gray-Blue */
+}
+
+/* Global Body Styling */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* BTTF Header Banner */
+.bttf-header {
+    background: linear-gradient(135deg, #1f0036 0%, #3a0007 50%, #ff5500 100%);
+    color: white;
+    text-align: center;
+    padding: 3.5rem 1rem;
+    border-bottom: 4px solid var(--flux-cyan);
+    box-shadow: 0 4px 25px rgba(0, 240, 255, 0.3);
+}
+
+.badge {
+    background-color: var(--neon-yellow);
+    color: #000;
+    padding: 6px 16px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+#time-traveler-name {
+    font-size: 3rem;
+    margin: 1.2rem 0 0.5rem 0;
+    letter-spacing: 2px;
+    color: #ffffff;
+    text-shadow: 0 0 10px var(--neon-orange), 0 0 20px var(--neon-orange);
+}
+
+.tagline {
+    font-size: 1.1rem;
+    color: var(--flux-cyan);
+    font-style: italic;
+    margin: 0;
+}
+
+/* Main Container Layout */
+.container {
+    max-width: 800px;
+    width: 90%;
+    margin: 2.5rem auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.8rem;
+    flex-grow: 1;
+}
+
+/* BTTF Style Cards */
+.card {
+    background-color: var(--card-bg);
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid #2a2a44;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+}
+
+.card h2 {
+    margin-top: 0;
+    color: var(--neon-yellow);
+    border-bottom: 2px solid #2a2a44;
+    padding-bottom: 0.6rem;
+    letter-spacing: 1px;
+}
+
+/* Skill Badges */
+.skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-top: 1rem;
+}
+
+.skill-tag {
+    background-color: #1c1c30;
+    color: var(--flux-cyan);
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 6px;
+    border: 1px solid var(--flux-cyan);
+    box-shadow: 0 0 8px rgba(0, 240, 255, 0.2);
+}
+
+/* Project Cards */
+.project-card {
+    background-color: #0c0c16;
+    border: 1px solid #282840;
+    border-left: 4px solid var(--neon-orange);
+    padding: 1.2rem;
+    border-radius: 8px;
+    margin-top: 1rem;
+}
+
+.project-card h3 {
+    margin: 0 0 0.5rem 0;
+    color: var(--text-light);
+}
+
+.project-card p {
+    margin: 0;
+    color: var(--text-muted);
+}
+
+/* Interactive DeLorean Button */
+button {
+    background-color: var(--neon-orange);
+    color: white;
+    border: none;
+    padding: 14px 28px;
+    font-size: 1.1rem;
+    font-weight: 800;
+    border-radius: 6px;
+    cursor: pointer;
+    letter-spacing: 1px;
+    transition: all 0.2s ease;
+    box-shadow: 0 0 15px rgba(255, 85, 0, 0.4);
+}
+
+button:hover {
+    background-color: var(--neon-yellow);
+    color: #000;
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(255, 204, 0, 0.8);
+}
+
+.time-box {
+    margin-top: 1.2rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: var(--flux-cyan);
+    background-color: #080810;
+    padding: 12px;
+    border-radius: 6px;
+    border: 1px solid var(--flux-cyan);
+    display: inline-block;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1.8rem;
+    background-color: #05050a;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    border-top: 1px solid #1a1a2e;
+}
