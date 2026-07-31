@@ -5,6 +5,7 @@
     --neon-pink: #ff2a75;           /* Subtle 80s Magenta Accent */
     --neon-cyan: #00f0ff;           /* Electric Cyan Accent */
     --neon-yellow: #ffcc00;         /* Dashboard Warning Yellow */
+    --danger-red: #ff3333;          /* Danger Shift Warning Red */
     --text-bright: #f0f4f8;         /* Crisp White Text */
     --text-muted: #94a3b8;          /* Muted Gray Text */
 }
@@ -79,22 +80,42 @@ body {
     padding-bottom: 0.5rem;
 }
 
-/* Skill Tags */
-.skills-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    margin-top: 1rem;
+/* ASCII DeLorean Art Display */
+.delorean-card {
+    text-align: center;
 }
 
-.skill-tag {
-    background-color: #23273a;
-    color: var(--neon-pink);
-    font-weight: 600;
-    padding: 6px 14px;
-    border-radius: 6px;
-    border: 1px solid var(--neon-pink);
+.delorean-art {
+    font-family: monospace;
+    color: var(--neon-cyan);
+    font-weight: bold;
+    font-size: 1rem;
+    line-height: 1.2;
+    background-color: #0c0d14;
+    padding: 1rem;
+    border-radius: 8px;
+    display: inline-block;
+    border: 1px solid #2d3248;
+}
+
+.delorean-caption {
+    margin-top: 0.5rem;
+    color: var(--text-muted);
     font-size: 0.9rem;
+}
+
+/* Favorites List Styling */
+.favorites-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.favorites-list li {
+    background-color: #12131c;
+    padding: 10px 14px;
+    margin-bottom: 8px;
+    border-radius: 6px;
+    border-left: 3px solid var(--neon-cyan);
 }
 
 /* Project Cards Layout Grid */
@@ -127,10 +148,15 @@ body {
     color: var(--text-muted);
 }
 
-/* Back To The Future Game Card Styling */
+/* Mini-Game Card & Controls */
 .game-card {
     border: 1px solid var(--neon-cyan);
     text-align: center;
+}
+
+.danger-text {
+    color: var(--danger-red);
+    font-weight: bold;
 }
 
 .game-dashboard {
@@ -144,34 +170,39 @@ body {
     border: 1px solid #2d3248;
 }
 
-.speedometer {
-    font-size: 2.2rem;
+.stat-box {
+    font-size: 1.3rem;
     font-weight: bold;
     color: var(--neon-yellow);
     font-family: monospace;
 }
 
-.timer {
-    font-size: 1.1rem;
-    font-weight: bold;
-    color: var(--neon-pink);
+.game-controls {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
 }
 
-/* Interactive Button */
+/* Interactive Buttons */
 button {
     background-color: var(--neon-pink);
     color: white;
     border: none;
-    padding: 14px 28px;
-    font-size: 1.1rem;
+    padding: 14px 24px;
+    font-size: 1rem;
     font-weight: bold;
     border-radius: 6px;
     cursor: pointer;
     transition: transform 0.1s ease, background-color 0.2s ease;
 }
 
+.shift-btn {
+    background-color: var(--neon-cyan);
+    color: #000;
+}
+
 button:hover {
-    background-color: #e01e63;
     transform: translateY(-2px);
 }
 
