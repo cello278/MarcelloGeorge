@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cello's Projects | Workshop Hub</title>
+    <!-- Linking external CSS stylesheet -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -29,16 +30,16 @@
         <!-- VIEW 1: Main Overview Dashboard (Default) -->
         <div id="main-view" class="view-section active-view">
             
-            <!-- About Me -->
+            <!-- About Me Card -->
             <section class="card">
                 <h2>About Me</h2>
-                <p>Hi, I'm Marcello! Welcome to my project showcase. Click on any project card below or use the navigation header to explore dedicated pages.</p>
+                <p>Hi, I'm Marcello! Welcome to my project showcase. Click on any project card below or use the navigation buttons above to explore dedicated pages.</p>
             </section>
 
-            <!-- 3D Prints & Workbench Builds -->
+            <!-- 3D Prints & Physical Builds Card -->
             <section class="card">
                 <h2>🧱 3D Prints & Physical Builds</h2>
-                <p class="section-subtitle">Click a project to view its full details page:</p>
+                <p class="section-subtitle">Click a project card to view its full details page:</p>
                 <div class="project-grid">
                     <div class="project-card clickable" data-target="project-1-view">
                         <h3>🖨️ 3D Print Design #1</h3>
@@ -55,43 +56,51 @@
 
             <!-- Quick Favorites Preview -->
             <section class="card">
-                <h2>⭐ Quick Links</h2>
+                <h2>🎬 Media & Favorites</h2>
                 <div class="project-grid">
                     <div class="project-card clickable" data-target="movies-view">
-                        <h3>🎬 Movie & Media Hub</h3>
-                        <p>A list of movies, classic films, and media that inspire my builds.</p>
-                        <span class="view-link">Open Movies Page →</span>
+                        <h3>🎬 Movie Gallery</h3>
+                        <p>A visual gallery of my favorite movies and film posters.</p>
+                        <span class="view-link">Open Movies Gallery →</span>
                     </div>
                 </div>
             </section>
 
         </div>
 
-
-        <!-- VIEW 2: Dedicated Movies Page -->
+        <!-- VIEW 2: Visual Movie Gallery Page -->
         <div id="movies-view" class="view-section">
             <button class="back-btn">← Back to Projects</button>
             <section class="card">
-                <h2>🎬 Favorite Movies & Media</h2>
-                <p>Films, sci-fi classics, and cinema that inspire my physical builds and designs.</p>
+                <h2>🎬 Favorite Movies</h2>
+                <p>My collection of favorite films and posters.</p>
                 
-                <ul class="item-list">
-                    <li>
-                        <strong>Back to the Future Trilogy</strong>
-                        <p>Classic 80s sci-fi featuring timeless hardware design and time travel.</p>
-                    </li>
-                    <li>
-                        <strong>[Add Movie #2 Title]</strong>
-                        <p>Edit index.html to add details about this movie!</p>
-                    </li>
-                    <li>
-                        <strong>[Add Movie #3 Title]</strong>
-                        <p>Edit index.html to add details about this movie!</p>
-                    </li>
-                </ul>
+                <div class="movie-gallery">
+                    
+                    <!-- Movie Card 1 -->
+                    <div class="movie-poster-card">
+                        <!-- Replace src with your own image file path or image URL -->
+                        <img src="images/movie1.jpg" alt="Movie 1 Poster" class="poster-img" onerror="this.src='https://via.placeholder.com/300x450/1a1c29/00f0ff?text=Movie+1+Poster'">
+                        <h3 class="movie-title">Movie Title #1</h3>
+                    </div>
+
+                    <!-- Movie Card 2 -->
+                    <div class="movie-poster-card">
+                        <!-- Replace src with your own image file path or image URL -->
+                        <img src="images/movie2.jpg" alt="Movie 2 Poster" class="poster-img" onerror="this.src='https://via.placeholder.com/300x450/1a1c29/00f0ff?text=Movie+2+Poster'">
+                        <h3 class="movie-title">Movie Title #2</h3>
+                    </div>
+
+                    <!-- Movie Card 3 -->
+                    <div class="movie-poster-card">
+                        <!-- Replace src with your own image file path or image URL -->
+                        <img src="images/movie3.jpg" alt="Movie 3 Poster" class="poster-img" onerror="this.src='https://via.placeholder.com/300x450/1a1c29/00f0ff?text=Movie+3+Poster'">
+                        <h3 class="movie-title">Movie Title #3</h3>
+                    </div>
+
+                </div>
             </section>
         </div>
-
 
         <!-- VIEW 3: Dedicated 3D Print Design #1 Page -->
         <div id="project-1-view" class="view-section">
@@ -112,7 +121,6 @@
             </section>
         </div>
 
-
         <!-- VIEW 4: Dedicated Physical Build #2 Page -->
         <div id="project-2-view" class="view-section">
             <button class="back-btn">← Back to Projects</button>
@@ -121,9 +129,6 @@
                 <div class="details-box">
                     <h3>Project Overview</h3>
                     <p>This page is dedicated exclusively to Physical Build #2. Add wiring diagrams, build logs, materials lists, or progress reports here.</p>
-                    
-                    <h4>Build Notes:</h4>
-                    <p>Space for detailed project notes, challenges faced, and future improvements.</p>
                 </div>
             </section>
         </div>
@@ -135,6 +140,7 @@
         <p>&copy; 2026 Marcello. Hosted on GitHub Pages.</p>
     </footer>
 
+    <!-- External JavaScript linking at bottom of body -->
     <script src="script.js"></script>
 </body>
 </html>
