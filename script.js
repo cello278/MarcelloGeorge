@@ -1,26 +1,25 @@
-// Wait for the HTML elements to fully load
+// Wait for DOM content to load
 document.addEventListener('DOMContentLoaded', () => {
     
-    // Select the interactive button and time display text
-    const deloreanBtn = document.getElementById('delorean-btn');
-    const circuitOutput = document.getElementById('circuit-output');
+    // Select elements
+    const retroBtn = document.getElementById('retro-btn');
+    const retroOutput = document.getElementById('retro-output');
 
-    // Time circuit logs straight out of the movies!
-    const timeCircuitDestinations = [
-        "🔴 DESTINATION TIME: NOV 05 1955 06:00 AM (Where it all began)",
-        "🟢 PRESENT TIME: OCT 26 1985 01:21 PM (Twin Pines Mall)",
-        "🟡 LAST TIME DEPARTED: OCT 21 2015 04:29 PM (Hoverboards & Flying Cars)",
-        "⚡ STATUS: Flux Capacitor Fluxing... 1.21 Gigawatts Ready!"
+    // Fun retro-flavored status lines
+    const engineStatuses = [
+        "🏎️ DeLorean Engine: Idle & Ready to roll.",
+        "📻 Playing: 80s Synthwave Playlist.",
+        "💻 Coding Mode: Activated.",
+        "🚀 Destination: GitHub Pages live deployment!"
     ];
 
-    let timeIndex = 0;
+    let statusIndex = 0;
 
-    // Trigger time travel jump on click
-    deloreanBtn.addEventListener('click', () => {
-        // Display destination string
-        circuitOutput.textContent = timeCircuitDestinations[timeIndex];
+    // Add click listener
+    retroBtn.addEventListener('click', () => {
+        retroOutput.textContent = engineStatuses[statusIndex];
         
-        // Cycle to the next time destination
-        timeIndex = (timeIndex + 1) % timeCircuitDestinations.length;
+        // Cycle status lines
+        statusIndex = (statusIndex + 1) % engineStatuses.length;
     });
 });
