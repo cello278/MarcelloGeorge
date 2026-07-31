@@ -1,9 +1,10 @@
 /* Subtle 80s Synthwave Palette */
 :root {
     --bg-dark: #12131c;             /* Dark Navy/Slate Background */
-    --card-bg: #1a1c29;             /* Slightly Lighter Dark Card */
-    --neon-pink: #ff2a75;           /* Subtle 80s Magenta/Pink */
+    --card-bg: #1a1c29;             /* Lighter Dark Card */
+    --neon-pink: #ff2a75;           /* Subtle 80s Magenta Accent */
     --neon-cyan: #00f0ff;           /* Electric Cyan Accent */
+    --neon-yellow: #ffcc00;         /* Dashboard Warning Yellow */
     --text-bright: #f0f4f8;         /* Crisp White Text */
     --text-muted: #94a3b8;          /* Muted Gray Text */
 }
@@ -58,7 +59,7 @@ body {
     margin: 2rem auto;
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 1.8rem;
     flex-grow: 1;
 }
 
@@ -96,14 +97,25 @@ body {
     font-size: 0.9rem;
 }
 
-/* Project Cards */
+/* Project Cards Layout Grid */
+.project-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
 .project-card {
     background-color: #12131c;
     border: 1px solid #2d3248;
     border-left: 4px solid var(--neon-pink);
     padding: 1rem 1.2rem;
     border-radius: 8px;
-    margin-top: 1rem;
+}
+
+.placeholder-card {
+    border-left: 4px dashed var(--text-muted);
+    opacity: 0.8;
 }
 
 .project-card h3 {
@@ -115,14 +127,44 @@ body {
     color: var(--text-muted);
 }
 
+/* Back To The Future Game Card Styling */
+.game-card {
+    border: 1px solid var(--neon-cyan);
+    text-align: center;
+}
+
+.game-dashboard {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #0c0d14;
+    padding: 1rem;
+    border-radius: 8px;
+    margin: 1.2rem 0;
+    border: 1px solid #2d3248;
+}
+
+.speedometer {
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: var(--neon-yellow);
+    font-family: monospace;
+}
+
+.timer {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: var(--neon-pink);
+}
+
 /* Interactive Button */
 button {
     background-color: var(--neon-pink);
     color: white;
     border: none;
-    padding: 12px 24px;
-    font-size: 1rem;
-    font-weight: 600;
+    padding: 14px 28px;
+    font-size: 1.1rem;
+    font-weight: bold;
     border-radius: 6px;
     cursor: pointer;
     transition: transform 0.1s ease, background-color 0.2s ease;
@@ -133,7 +175,7 @@ button:hover {
     transform: translateY(-2px);
 }
 
-.status-text {
+.game-status-text {
     margin-top: 1rem;
     font-weight: 600;
     color: var(--neon-cyan);
