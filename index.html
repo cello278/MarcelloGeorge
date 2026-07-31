@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Awesome Personal Website</title>
+    <!-- Linking our external CSS stylesheet for styling -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header Section: Holds the main heading and intro -->
+    <header>
+        <h1 id="main-title">Welcome to My Personal Website!</h1>
+        <p class="subtitle">Built with HTML, CSS, and JavaScript.</p>
+    </header>
+
+    <!-- Main Content Section -->
+    <main>
+        <section class="card">
+            <h2>About Me</h2>
+            <p>Hi! I'm learning how to code and build websites from scratch. This site is hosted on GitHub Pages!</p>
+            
+            <!-- A button that will trigger an action in our JavaScript file -->
+            <button id="magic-btn">Click For A Surprise!</button>
+            <p id="magic-text" class="hidden-text"></p>
+        </section>
+    </main>
+
+    <!-- Linking our JavaScript file at the end of body so HTML loads first -->
+    <script src="script.js"></script>
+</body>
+</html>
