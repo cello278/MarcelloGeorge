@@ -3,81 +3,120 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Select Game Elements
     const gasBtn = document.getElementById('gas-btn');
+    const shiftBtn = document.getElementById('shift-btn');
     const speedDisplay = document.getElementById('speed-display');
+    const gearDisplay = document.getElementById('gear-display');
     const timeDisplay = document.getElementById('time-display');
     const gameStatus = document.getElementById('game-status');
 
     // Game Variables
-    let currentSpeed = 0;
-    let timeLeft = 10;
+    let speed = 0;
+    let gear = 1;
+    let maxSpeedForGear = 30; // Gear 1 caps out at 30 MPH
+    let timeLeft = 7;
     let gameActive = false;
     let timerInterval = null;
+    let decayInterval = null;
 
-    // Click handler for the Accelerate button
+    // Click GAS
     gasBtn.addEventListener('click', () => {
-        
-        // Start game on first click
-        if (!gameActive && timeLeft === 10) {
+        if (!gameActive && timeLeft === 7) {
             startGame();
         }
 
-        // If game is running, boost speed
         if (gameActive) {
-            currentSpeed += 4;
-            speedDisplay.textContent = currentSpeed;
+            // Speed increases if under max gear limit
+            if (speed < maxSpeedForGear) {
+                speed += 5;
+            } else {
+                gameStatus.textContent = "⚠️ REVLIMITER HIT! SHIFT GEAR NOW!";
+            }
 
-            // Check if player reaches 88 MPH
-            if (currentSpeed >= 88) {
+            speedDisplay.textContent = speed;
+
+            if (speed >= 88) {
                 winGame();
             }
         }
     });
 
-    // Function to start timer
+    // Click SHIFT GEAR
+    shiftBtn.addEventListener('click', () => {
+        if (gameActive) {
+            if (speed >= maxSpeedForGear - 5) {
+                gear++;
+                gearDisplay.textContent = gear;
+                maxSpeedForGear += 30; // Unlock higher speed limit
+                gameStatus.textContent = `⚙️ Shifted to Gear ${gear}! Keep pushing!`;
+            } else {
+                gameStatus.textContent = "❌ Shifted too early! Lost speed!";
+                speed = Math.max(0, speed - 10);
+                speedDisplay.textContent = speed;
+            }
+        }
+    });
+
+    // Start Game Loops
     function startGame() {
         gameActive = true;
-        gameStatus.textContent = "⚡ PUSH IT TO 88 MPH!";
-        
+        gameStatus.textContent = "🔥 PUSH GAS AND SHIFT AT THE RIGHT TIME!";
+
+        // Timer Loop (7 Seconds)
         timerInterval = setInterval(() => {
             timeLeft--;
             timeDisplay.textContent = timeLeft;
 
             if (timeLeft <= 0) {
-                endGame(false);
+                endGame();
             }
         }, 1000);
+
+        // Speed Decay Loop (Loses 2 MPH every 300ms)
+        decayInterval = setInterval(() => {
+            if (gameActive && speed > 0) {
+                speed = Math.max(0, speed - 2);
+                speedDisplay.textContent = speed;
+            }
+        }, 300);
     }
 
-    // Function for winning
+    // Win Condition
     function winGame() {
-        clearInterval(timerInterval);
+        stopIntervals();
         gameActive = false;
-        gameStatus.textContent = "🔥 88 MPH REACHED! FLUX CAPACITOR ACTIVATED!";
+        gameStatus.textContent = "💥 88 MPH REACHED! TIME TRAVEL UNLOCKED!";
         gasBtn.textContent = "PLAY AGAIN 🔄";
         resetGameTrigger();
     }
 
-    // Function for losing / running out of time
-    function endGame(won) {
-        clearInterval(timerInterval);
+    // Fail Condition
+    function endGame() {
+        stopIntervals();
         gameActive = false;
-        gameStatus.textContent = "💥 Out of time! You didn't make it to 88 MPH.";
+        gameStatus.textContent = "❌ Out of time! You didn't reach 88 MPH.";
         gasBtn.textContent = "TRY AGAIN 🔄";
         resetGameTrigger();
     }
 
-    // Prepare game for restart
+    function stopIntervals() {
+        clearInterval(timerInterval);
+        clearInterval(decayInterval);
+    }
+
+    // Reset Game State
     function resetGameTrigger() {
-        // Setup button to reset stats on next click
         gasBtn.onclick = () => {
-            currentSpeed = 0;
-            timeLeft = 10;
-            speedDisplay.textContent = "0";
-            timeDisplay.textContent = "10";
-            gameStatus.textContent = "Click Accelerate to start!";
-            gasBtn.textContent = "ACCELERATE! 🏎️💨";
+            speed = 0;
+            gear = 1;
+            maxSpeedForGear = 30;
+            timeLeft = 7;
             
-            // Re-attach normal game click logic
+            speedDisplay.textContent = "0";
+            gearDisplay.textContent = "1";
+            timeDisplay.textContent = "7";
+            gameStatus.textContent = "Click GAS to start!";
+            gasBtn.textContent = "GAS! 🏎️💨";
+            
             gasBtn.onclick = null;
         };
     }
