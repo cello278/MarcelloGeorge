@@ -154,11 +154,6 @@ body {
     text-align: center;
 }
 
-.danger-text {
-    color: var(--danger-red);
-    font-weight: bold;
-}
-
 .game-dashboard {
     display: flex;
     justify-content: space-around;
