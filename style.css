@@ -1,16 +1,12 @@
-/* Subtle 80s Synthwave Palette */
 :root {
-    --bg-dark: #12131c;             /* Dark Navy/Slate Background */
-    --card-bg: #1a1c29;             /* Lighter Dark Card */
-    --neon-pink: #ff2a75;           /* Subtle 80s Magenta Accent */
-    --neon-cyan: #00f0ff;           /* Electric Cyan Accent */
-    --neon-yellow: #ffcc00;         /* Dashboard Warning Yellow */
-    --danger-red: #ff3333;          /* Danger Shift Warning Red */
-    --text-bright: #f0f4f8;         /* Crisp White Text */
-    --text-muted: #94a3b8;          /* Muted Gray Text */
+    --bg-dark: #12131c;
+    --card-bg: #1a1c29;
+    --neon-pink: #ff2a75;
+    --neon-cyan: #00f0ff;
+    --text-bright: #f0f4f8;
+    --text-muted: #94a3b8;
 }
 
-/* Global Styles */
 body {
     font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
     background-color: var(--bg-dark);
@@ -22,14 +18,13 @@ body {
     min-height: 100vh;
 }
 
-/* Header Banner */
+/* Header & Nav */
 .portfolio-header {
     background: linear-gradient(135deg, #2b1055, var(--neon-pink));
     color: white;
     text-align: center;
-    padding: 3rem 1rem;
+    padding: 2.5rem 1rem 1.5rem 1rem;
     border-bottom: 3px solid var(--neon-cyan);
-    box-shadow: 0 4px 15px rgba(0, 240, 255, 0.2);
 }
 
 .badge {
@@ -43,25 +38,53 @@ body {
 }
 
 #student-name {
-    font-size: 2.6rem;
-    margin: 1rem 0 0.5rem 0;
+    font-size: 2.4rem;
+    margin: 0.8rem 0 0.4rem 0;
 }
 
 .tagline {
-    font-size: 1.1rem;
+    font-size: 1rem;
     color: #e2e8f0;
-    margin: 0;
+    margin-bottom: 1.2rem;
 }
 
-/* Main Layout Grid */
+.nav-bar {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.nav-btn {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: var(--text-bright);
+    border: 1px solid var(--neon-cyan);
+    padding: 8px 18px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.nav-btn:hover {
+    background-color: var(--neon-cyan);
+    color: #000;
+}
+
+/* Layout Container */
 .container {
     max-width: 800px;
     width: 90%;
     margin: 2rem auto;
-    display: flex;
-    flex-direction: column;
-    gap: 1.8rem;
     flex-grow: 1;
+}
+
+/* Dynamic Page Views */
+.view-section {
+    display: none; /* Hidden by default */
+}
+
+.view-section.active-view {
+    display: block; /* Visible when active */
 }
 
 /* Cards */
@@ -70,6 +93,7 @@ body {
     padding: 1.8rem;
     border-radius: 12px;
     border: 1px solid #2d3248;
+    margin-bottom: 1.5rem;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
@@ -80,45 +104,12 @@ body {
     padding-bottom: 0.5rem;
 }
 
-/* ASCII DeLorean Art Display */
-.delorean-card {
-    text-align: center;
-}
-
-.delorean-art {
-    font-family: monospace;
-    color: var(--neon-cyan);
-    font-weight: bold;
-    font-size: 1rem;
-    line-height: 1.2;
-    background-color: #0c0d14;
-    padding: 1rem;
-    border-radius: 8px;
-    display: inline-block;
-    border: 1px solid #2d3248;
-}
-
-.delorean-caption {
-    margin-top: 0.5rem;
+.section-subtitle {
     color: var(--text-muted);
     font-size: 0.9rem;
 }
 
-/* Favorites List Styling */
-.favorites-list {
-    list-style-type: none;
-    padding: 0;
-}
-
-.favorites-list li {
-    background-color: #12131c;
-    padding: 10px 14px;
-    margin-bottom: 8px;
-    border-radius: 6px;
-    border-left: 3px solid var(--neon-cyan);
-}
-
-/* Project Cards Layout Grid */
+/* Interactive Project Cards */
 .project-grid {
     display: flex;
     flex-direction: column;
@@ -130,81 +121,78 @@ body {
     background-color: #12131c;
     border: 1px solid #2d3248;
     border-left: 4px solid var(--neon-pink);
-    padding: 1rem 1.2rem;
+    padding: 1.2rem;
     border-radius: 8px;
+    transition: transform 0.2s ease, border-color 0.2s ease;
 }
 
-.placeholder-card {
-    border-left: 4px dashed var(--text-muted);
-    opacity: 0.8;
+.project-card.clickable {
+    cursor: pointer;
+}
+
+.project-card.clickable:hover {
+    transform: translateX(4px);
+    border-color: var(--neon-cyan);
 }
 
 .project-card h3 {
     margin: 0 0 0.4rem 0;
+    color: var(--text-bright);
 }
 
 .project-card p {
-    margin: 0;
+    margin: 0 0 0.8rem 0;
     color: var(--text-muted);
 }
 
-/* Mini-Game Card & Controls */
-.game-card {
+.view-link {
+    color: var(--neon-cyan);
+    font-weight: 600;
+    font-size: 0.85rem;
+}
+
+/* Back Button */
+.back-btn {
+    background-color: transparent;
+    color: var(--neon-cyan);
     border: 1px solid var(--neon-cyan);
-    text-align: center;
-}
-
-.game-dashboard {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    background-color: #0c0d14;
-    padding: 1rem;
-    border-radius: 8px;
-    margin: 1.2rem 0;
-    border: 1px solid #2d3248;
-}
-
-.stat-box {
-    font-size: 1.3rem;
-    font-weight: bold;
-    color: var(--neon-yellow);
-    font-family: monospace;
-}
-
-.game-controls {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    flex-wrap: wrap;
-}
-
-/* Interactive Buttons */
-button {
-    background-color: var(--neon-pink);
-    color: white;
-    border: none;
-    padding: 14px 24px;
-    font-size: 1rem;
-    font-weight: bold;
+    padding: 8px 16px;
     border-radius: 6px;
+    font-weight: bold;
     cursor: pointer;
-    transition: transform 0.1s ease, background-color 0.2s ease;
+    margin-bottom: 1rem;
+    transition: background-color 0.2s ease;
 }
 
-.shift-btn {
+.back-btn:hover {
     background-color: var(--neon-cyan);
     color: #000;
 }
 
-button:hover {
-    transform: translateY(-2px);
+/* Lists and Boxes */
+.item-list {
+    list-style: none;
+    padding: 0;
 }
 
-.game-status-text {
-    margin-top: 1rem;
-    font-weight: 600;
-    color: var(--neon-cyan);
+.item-list li {
+    background-color: #12131c;
+    border: 1px solid #2d3248;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 0.8rem;
+}
+
+.item-list p {
+    margin: 0.4rem 0 0 0;
+    color: var(--text-muted);
+}
+
+.details-box {
+    background-color: #12131c;
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid #2d3248;
 }
 
 /* Footer */
